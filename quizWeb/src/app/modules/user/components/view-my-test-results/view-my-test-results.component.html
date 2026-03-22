@@ -1,0 +1,42 @@
+<div class="results-container">
+  <nz-table
+    #basicTable
+    [nzData]="dataSet"
+    [nzPageSize]="5"
+    [nzShowPagination]="true"
+    [nzFrontPagination]="true"
+    [nzShowSizeChanger]="true"
+    [nzPageSizeOptions]="[5, 10, 20]"
+    [nzShowQuickJumper]="true"
+    nzBordered
+  >
+    <thead>
+      <tr>
+        <th>Test Name</th>
+        <th>Total Questions</th>
+        <th>Correct Answers</th>
+        <th>Percentage</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- ✅ FIXED: changed from basicTable.nzData → basicTable.data -->
+      <tr *ngFor="let data of basicTable.data">
+        <td>{{ data.testName }}</td>
+        <td>{{ data.totalQuestions }}</td>
+        <td>{{ data.correctAnswers }}</td>
+        <td>
+          <span
+            class="percentage"
+            [ngClass]="{
+              'high-score': data.percentage >= 80,
+              'medium-score': data.percentage >= 40 && data.percentage < 80,
+              'low-score': data.percentage < 40
+            }"
+          >
+            {{ data.percentage }}%
+          </span>
+        </td>
+      </tr>
+    </tbody>
+  </nz-table>
+</div>

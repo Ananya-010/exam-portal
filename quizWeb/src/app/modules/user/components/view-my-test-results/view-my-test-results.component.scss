@@ -1,0 +1,107 @@
+/* Container styling */
+.results-container {
+  width: 85%;
+  margin: 40px auto;
+  background: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  padding: 30px;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Hover lift effect for the container */
+.results-container:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.25);
+}
+
+/* Table base styling */
+nz-table {
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+/* Header */
+nz-table thead tr {
+  background: linear-gradient(90deg, #4e54c8, #8f94fb);
+  color: #ffffff;
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+}
+
+nz-table thead th {
+  padding: 16px;
+  text-align: center;
+}
+
+/* Table rows */
+nz-table tbody tr {
+  transition: background 0.3s ease;
+}
+
+nz-table tbody tr:hover {
+  background-color: #f9f9ff;
+}
+
+/* Table cells */
+nz-table td {
+  padding: 14px;
+  font-size: 15px;
+  text-align: center;
+  color: #333333;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+/* Colored percentage text */
+.percentage {
+  display: inline-block;
+  font-weight: 700;
+  padding: 6px 14px;
+  border-radius: 20px;
+  min-width: 70px;
+  text-align: center;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Green for high scores */
+.high-score {
+  background: rgba(76, 175, 80, 0.15);
+  color: #2e7d32;
+  border: 1px solid #4caf50;
+}
+
+/* Orange for medium scores */
+.medium-score {
+  background: rgba(255, 193, 7, 0.15);
+  color: #f57c00;
+  border: 1px solid #ffb300;
+}
+
+/* Red for low scores */
+.low-score {
+  background: rgba(244, 67, 54, 0.15);
+  color: #d32f2f;
+  border: 1px solid #f44336;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .results-container {
+    width: 95%;
+    padding: 20px;
+  }
+
+  nz-table thead th,
+  nz-table td {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .percentage {
+    padding: 4px 10px;
+    font-size: 13px;
+  }
+}

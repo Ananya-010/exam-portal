@@ -1,0 +1,124 @@
+/* Main page background */
+.main {
+  padding: 50px 20px;
+  background: linear-gradient(135deg, #8f94fb 0%, #4e54c8 100%);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Individual test card */
+.test {
+  position: relative;
+  width: 70%;
+  margin: 25px auto;
+  background: #ffffff !important; /* force pure white */
+  border-radius: 15px;
+  border: 1px solid #e0e0e0;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease-in-out;
+  overflow: hidden;
+  z-index: 1;
+  isolation: isolate; /* prevents gradient bleed */
+}
+
+/* Keep card white even on hover */
+.test:hover {
+  background: #ffffff !important; /* no color shift */
+  transform: translateY(-5px);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.25);
+}
+
+/* Remove glowing gradient border entirely */
+.test::before,
+.test::after {
+  content: none !important;
+  background: none !important;
+  border: none !important;
+}
+
+/* Card title */
+.test .ant-card-head-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: #4e54c8; /* violet title text */
+}
+
+/* Content section */
+.test .test-content {
+  padding: 10px 0;
+}
+
+.test .test-content p {
+  font-size: 15px;
+  color: #333;
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+
+.test .test-content p strong {
+  color: #4e54c8;
+  font-weight: 600;
+}
+
+/* Button container */
+.test .button-container {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
+}
+
+/* Start button styling */
+.test .start-btn {
+  border-radius: 25px;
+  padding: 8px 25px;
+  font-weight: 600;
+  font-size: 15px;
+  letter-spacing: 0.4px;
+  background: linear-gradient(90deg, #4e54c8, #8f94fb);
+  color: #fff;
+  border: none;
+  transition: all 0.3s ease-in-out;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  box-shadow: 0 4px 10px rgba(78, 84, 200, 0.3);
+}
+
+/* Button hover animation */
+.test .start-btn:hover {
+  background: linear-gradient(90deg, #8f94fb, #4e54c8);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(78, 84, 200, 0.4);
+}
+
+/* Responsive Layout */
+@media (max-width: 992px) {
+  .test {
+    width: 90%;
+  }
+
+  .start-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .button-container {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 576px) {
+  .main {
+    padding: 30px 10px;
+  }
+
+  .test {
+    border-radius: 12px;
+  }
+
+  .ant-card-head-title {
+    font-size: 18px;
+  }
+}

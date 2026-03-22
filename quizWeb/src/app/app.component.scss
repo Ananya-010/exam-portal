@@ -1,0 +1,107 @@
+$primary: #4e54c8; // soft violet
+$secondary: #8f94fb; // gradient blue
+$accent: #ff7b00; // orange accent
+$white: #ffffff;
+$text-dark: #1e1e2f;
+
+.portal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(90deg, $primary, $secondary);
+  padding: 16px 60px;
+  border-radius: 0 0 20px 20px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+  color: $white;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+
+  .logo-section {
+    .brand-title {
+      font-size: 26px;
+      font-weight: 700;
+      color: $white;
+      text-decoration: none;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      transition: all 0.3s ease;
+
+      &:hover {
+        color: $accent;
+      }
+    }
+  }
+
+  .nav-section {
+    display: flex;
+    gap: 18px;
+
+    a[nz-button] {
+      font-size: 15px;
+      font-weight: 500;
+      color: $white;
+      text-transform: capitalize;
+      padding: 6px 16px;
+      border-radius: 25px;
+      border: 1px solid transparent;
+      transition: all 0.3s ease;
+      background: transparent;
+
+      &:hover {
+        background: rgba(255, 255, 255, 0.2);
+        color: $white;
+        border-color: rgba(255, 255, 255, 0.4);
+      }
+
+      &.active {
+        background: $accent;
+        color: $white;
+        border-color: $accent;
+        box-shadow: 0 0 10px rgba(255, 123, 0, 0.4);
+      }
+
+      &[nzType="primary"] {
+        background: $accent;
+        border: none;
+        color: $white;
+        font-weight: 600;
+
+        &:hover {
+          background: darken($accent, 5%);
+          box-shadow: 0 0 12px rgba(255, 123, 0, 0.5);
+        }
+      }
+
+      &[nzType="default"] {
+        background: rgba(255, 255, 255, 0.15);
+        color: $white;
+
+        &:hover {
+          background: $accent;
+          color: $white;
+          box-shadow: 0 0 10px rgba(255, 123, 0, 0.5);
+        }
+      }
+    }
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .portal-header {
+    flex-direction: column;
+    text-align: center;
+    padding: 14px 20px;
+
+    .nav-section {
+      margin-top: 10px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .brand-title {
+      font-size: 22px;
+    }
+  }
+}

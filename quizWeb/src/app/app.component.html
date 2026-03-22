@@ -1,0 +1,43 @@
+<!-- Public Header -->
+<div *ngIf="!isUserLoggedIn && !isAdminLoggedIn">
+  <nz-header class="portal-header">
+    <div class="logo-section">
+      <a routerLink="/login" class="brand-title">Exam Portal</a>
+    </div>
+    <div class="nav-section">
+      <a nz-button nzType="link" routerLink="/register" routerLinkActive="active">Sign Up</a>
+      <a nz-button nzType="primary" routerLink="/login" routerLinkActive="active">Login</a>
+    </div>
+  </nz-header>
+</div>
+
+<!-- Admin Header -->
+<div *ngIf="isAdminLoggedIn">
+  <nz-header class="portal-header">
+    <div class="logo-section">
+      <a routerLink="/admin/dashboard" class="brand-title">Exam Portal</a>
+    </div>
+    <div class="nav-section">
+      <a nz-button nzType="link" routerLink="/admin/dashboard" routerLinkActive="active">Dashboard</a>
+      <a nz-button nzType="link" routerLink="/admin/create-test" routerLinkActive="active">Create Test</a>
+      <a nz-button nzType="link" routerLink="/admin/view-test-results" routerLinkActive="active">Results</a>
+      <a nz-button nzType="default" (click)="logout()">Logout</a>
+    </div>
+  </nz-header>
+</div>
+
+<!-- User Header -->
+<div *ngIf="isUserLoggedIn">
+  <nz-header class="portal-header">
+    <div class="logo-section">
+      <a routerLink="/user/dashboard" class="brand-title">Exam Portal</a>
+    </div>
+    <div class="nav-section">
+      <a nz-button nzType="link" routerLink="/user/dashboard" routerLinkActive="active">Dashboard</a>
+      <a nz-button nzType="link" routerLink="/user/view-test-results" routerLinkActive="active">Results</a>
+      <a nz-button nzType="default" (click)="logout()">Logout</a>
+    </div>
+  </nz-header>
+</div>
+
+<router-outlet></router-outlet>

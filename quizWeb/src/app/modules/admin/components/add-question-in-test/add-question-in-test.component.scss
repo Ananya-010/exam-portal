@@ -1,0 +1,123 @@
+/* Overall container */
+.question-form-container {
+  background: linear-gradient(135deg, #8f94fb 0%, #4e54c8 100%);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 10px;
+}
+
+/* Card */
+.form-card {
+  background: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  padding: 50px 60px;
+  width: 70%;
+  max-width: 700px;
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25);
+  }
+}
+
+/* Title */
+.form-title {
+  text-align: center;
+  color: #4e54c8;
+  font-weight: 700;
+  font-size: 26px;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Form layout */
+nz-form-item {
+  margin-bottom: 18px;
+}
+
+/* Input styles */
+input[nz-input] {
+  height: 42px;
+  border-radius: 8px;
+  border: 1px solid #d9d9d9;
+  transition: 0.3s ease;
+
+  &:focus {
+    border-color: #4e54c8;
+    box-shadow: 0 0 6px rgba(78, 84, 200, 0.4);
+  }
+}
+
+/* Select styling */
+nz-select {
+  width: 100%;
+  border-radius: 8px;
+}
+
+/* ✅ FIXED BUTTON ALIGNMENT SECTION */
+.button-container {
+  display: flex;
+  justify-content: flex-end; /* aligned right for large screens */
+  margin-top: 35px;
+
+  /* Fix alignment inside NZ form */
+  nz-form-control {
+    display: flex;
+    justify-content: flex-end;
+  }
+}
+
+/* Responsive fix for mobile/tablet */
+@media (max-width: 768px) {
+  .form-card {
+    width: 95%;
+    padding: 30px 25px;
+  }
+
+  .form-title {
+    font-size: 22px;
+  }
+
+  .button-container {
+    justify-content: center; /* Center the button on mobile */
+  }
+
+  .submit-btn {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* Submit button style */
+.submit-btn {
+  background: linear-gradient(90deg, #4e54c8, #8f94fb);
+  border: none;
+  border-radius: 30px;
+  padding: 10px 28px;
+  color: #fff;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  font-size: 15px;
+  box-shadow: 0 4px 10px rgba(78, 84, 200, 0.4);
+  transition: all 0.3s ease-in-out;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  &:hover {
+    background: linear-gradient(90deg, #8f94fb, #4e54c8);
+    box-shadow: 0 6px 15px rgba(78, 84, 200, 0.5);
+    transform: translateY(-2px);
+  }
+
+  &[disabled] {
+    background: #ccc;
+    box-shadow: none;
+    cursor: not-allowed;
+  }
+}

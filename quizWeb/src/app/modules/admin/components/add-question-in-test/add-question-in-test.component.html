@@ -1,0 +1,60 @@
+<div class="question-form-container">
+  <div class="form-card">
+    <h2 class="form-title">Create a New Question</h2>
+    <form nz-form [formGroup]="questionForm" (ngSubmit)="submitForm()" class="question-form">
+
+      <nz-form-item>
+        <nz-form-label [nzNoColon]="true">Question Title</nz-form-label>
+        <nz-form-control nzErrorTip="This field is required!">
+          <input nz-input formControlName="questionText" placeholder="Enter question text..." />
+        </nz-form-control>
+      </nz-form-item>
+
+      <nz-form-item>
+        <nz-form-label [nzNoColon]="true">Option A</nz-form-label>
+        <nz-form-control nzErrorTip="This field is required!">
+          <input nz-input formControlName="optionA" placeholder="Enter Option A..." />
+        </nz-form-control>
+      </nz-form-item>
+
+      <nz-form-item>
+        <nz-form-label [nzNoColon]="true">Option B</nz-form-label>
+        <nz-form-control nzErrorTip="This field is required!">
+          <input nz-input formControlName="optionB" placeholder="Enter Option B..." />
+        </nz-form-control>
+      </nz-form-item>
+
+      <nz-form-item>
+        <nz-form-label [nzNoColon]="true">Option C</nz-form-label>
+        <nz-form-control nzErrorTip="This field is required!">
+          <input nz-input formControlName="optionC" placeholder="Enter Option C..." />
+        </nz-form-control>
+      </nz-form-item>
+
+      <nz-form-item>
+        <nz-form-label [nzNoColon]="true">Option D</nz-form-label>
+        <nz-form-control nzErrorTip="This field is required!">
+          <input nz-input formControlName="optionD" placeholder="Enter Option D..." />
+        </nz-form-control>
+      </nz-form-item>
+
+      <nz-form-item>
+        <nz-form-label [nzNoColon]="true">Correct Option</nz-form-label>
+        <nz-form-control nzErrorTip="Please select a correct option!">
+          <nz-select formControlName="correctOption" nzPlaceHolder="Select Correct Option">
+            <nz-option nzValue="A" nzLabel="Option A"></nz-option>
+            <nz-option nzValue="B" nzLabel="Option B"></nz-option>
+            <nz-option nzValue="C" nzLabel="Option C"></nz-option>
+            <nz-option nzValue="D" nzLabel="Option D"></nz-option>
+          </nz-select>
+        </nz-form-control>
+      </nz-form-item>
+
+      <div class="button-container">
+        <button nz-button [nzType]="'primary'" class="submit-btn" [disabled]="questionForm.invalid">
+          <i nz-icon nzType="plus-circle" nzTheme="outline"></i> Submit Question
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

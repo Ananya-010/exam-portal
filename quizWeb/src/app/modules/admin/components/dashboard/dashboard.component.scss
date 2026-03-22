@@ -1,0 +1,99 @@
+/* Main page background */
+.main {
+  padding: 40px 20px;
+  background: linear-gradient(135deg, #8f94fb 0%, #4e54c8 100%);
+  min-height: 100vh;
+}
+
+/* Card container */
+.test {
+  width: 70%;
+  margin: 25px auto;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+  border: none;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.25);
+  }
+
+  /* Title styling */
+  .ant-card-head-title {
+    font-size: 20px;
+    font-weight: 700;
+    color: #4e54c8;
+  }
+
+  /* Paragraphs inside cards */
+  p {
+    font-size: 15px;
+    color: #333;
+    line-height: 1.6;
+    margin-bottom: 8px;
+
+    strong {
+      color: #4e54c8;
+      font-weight: 600;
+    }
+  }
+
+  /* Button container */
+  .button-group {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-top: 15px;
+  }
+
+  /* Buttons */
+  button[nz-button] {
+    border-radius: 25px;
+    padding: 6px 20px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+
+    &[nzType='primary'] {
+      background: linear-gradient(90deg, #4e54c8, #8f94fb);
+      border: none;
+      color: #fff;
+
+      &:hover {
+        background: linear-gradient(90deg, #8f94fb, #4e54c8);
+        box-shadow: 0 4px 10px rgba(78, 84, 200, 0.4);
+        transform: translateY(-2px);
+      }
+    }
+
+    &[nzType='default'] {
+      background: #fff;
+      color: #4e54c8;
+      border: 1px solid #4e54c8;
+
+      &:hover {
+        background: #4e54c8;
+        color: #fff;
+        box-shadow: 0 4px 8px rgba(78, 84, 200, 0.3);
+      }
+    }
+  }
+}
+
+/* Small responsive fix */
+@media (max-width: 768px) {
+  .test {
+    width: 90%;
+  }
+
+  .button-group {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  button[nz-button] {
+    width: 100%;
+  }
+}

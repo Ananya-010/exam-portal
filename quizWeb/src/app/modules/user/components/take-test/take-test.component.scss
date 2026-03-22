@@ -1,0 +1,186 @@
+/* Full page background */
+.test-page {
+  width: 100%;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #8f94fb 0%, #4e54c8 100%);
+  padding: 40px 10%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Timer styling (glass glowing effect) */
+.timer-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 30px 0;
+  position: sticky;
+  top: 10px;
+  z-index: 100;
+}
+
+.timer {
+  backdrop-filter: blur(12px);
+  background: rgba(255, 255, 255, 0.15);
+  border: 2px solid rgba(255, 255, 255, 0.25);
+  border-radius: 50px;
+  padding: 14px 40px;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #ffffff;
+  text-shadow: 0 0 10px rgba(78, 84, 200, 0.8);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  letter-spacing: 0.5px;
+  animation: pulse-timer 2s infinite alternate;
+}
+
+@keyframes pulse-timer {
+  from {
+    transform: scale(1);
+    box-shadow: 0 0 15px rgba(143, 148, 251, 0.4);
+  }
+  to {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px rgba(78, 84, 200, 0.6);
+  }
+}
+
+/* Question card */
+/* Question card — permanently white, no blue tint anywhere */
+.question-card {
+  width: 100%;
+  background: #ffffff !important; /* force white */
+  border-radius: 15px;
+  padding: 25px 30px;
+  margin-bottom: 30px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease-in-out;
+  border: 1px solid transparent;
+  color: #222;
+  position: relative;
+  isolation: isolate; /* prevent parent gradient bleeding */
+}
+
+/* Strong hover rule — stays white */
+.question-card:hover {
+  background: #ffffff !important; /* absolute white */
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+  border-color: #e0e0e0;
+}
+
+/* Remove any inherited pseudo-element glow or overlay */
+.question-card::before,
+.question-card::after {
+  content: none !important;
+  background: none !important;
+  mask: none !important;
+  -webkit-mask: none !important;
+}
+
+
+/* keep white background on hover */
+.question-card:hover {
+  background: #ffffff; /* stays white */
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+  border-color: #e0e0e0; /* subtle gray outline */
+}
+
+/* Question title */
+.question-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: #4e54c8;
+  margin-bottom: 20px;
+  border-left: 5px solid #4e54c8;
+  padding-left: 10px;
+}
+
+/* Options */
+.option {
+  margin-bottom: 12px;
+}
+
+.option label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 10px 14px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+/* Remove blue hover tint on options */
+.option label:hover {
+  background: #ffffff; /* keep plain white */
+  border-color: #4e54c8; /* subtle focus border */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.option input[type='radio'] {
+  accent-color: #4e54c8;
+  transform: scale(1.2);
+  cursor: pointer;
+}
+
+/* Submit button section */
+.submit-container {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 40px;
+  width: 100%;
+  position: relative;
+}
+
+.submit-btn {
+  background: linear-gradient(90deg, #4e54c8, #8f94fb);
+  color: #fff;
+  border: none;
+  border-radius: 30px;
+  padding: 12px 40px;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+  box-shadow: 0 4px 12px rgba(78, 84, 200, 0.4);
+  transition: all 0.3s ease-in-out;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.submit-btn:hover {
+  background: linear-gradient(90deg, #8f94fb, #4e54c8);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(78, 84, 200, 0.5);
+}
+
+/* Responsive layout */
+@media (max-width: 768px) {
+  .test-page {
+    padding: 30px 5%;
+  }
+
+  .timer {
+    font-size: 1.1rem;
+    padding: 10px 20px;
+  }
+
+  .question-card {
+    padding: 20px;
+  }
+
+  .submit-container {
+    justify-content: center;
+  }
+
+  .submit-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}

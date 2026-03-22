@@ -1,0 +1,117 @@
+/* Full page gradient background */
+.quiz-page {
+  width: 100%;
+  min-height: 100vh;
+  background: linear-gradient(120deg, #4e54c8, #8f94fb);
+  padding: 60px 10%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Individual question card */
+.question-card {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.98);
+  padding: 30px 40px;
+  margin-bottom: 35px;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+  }
+}
+
+/* Question title */
+.question-title {
+  font-size: 22px;
+  font-weight: 700;
+  color: #4e54c8;
+  margin-bottom: 20px;
+  border-left: 5px solid #4e54c8;
+  padding-left: 12px;
+  text-transform: capitalize;
+}
+
+/* Option styles */
+.option {
+  margin-bottom: 12px;
+
+  label {
+    display: flex;
+    align-items: center;
+    padding: 10px 14px;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    font-size: 16px;
+    background: #fafafa;
+    color: #333;
+    transition: 0.3s ease all;
+    cursor: pointer;
+
+    &:hover {
+      background: rgba(78, 84, 200, 0.1);
+      border-color: #4e54c8;
+      box-shadow: 0 0 10px rgba(78, 84, 200, 0.3);
+    }
+
+    input[type='radio'] {
+      margin-right: 12px;
+      accent-color: #4e54c8;
+      transform: scale(1.2);
+    }
+  }
+}
+
+/* Smooth gradient fade at bottom of page */
+.quiz-page::after {
+  content: '';
+  display: block;
+  height: 80px;
+  width: 100%;
+  background: linear-gradient(to top, rgba(78, 84, 200, 0.5), transparent);
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  pointer-events: none;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .quiz-page {
+    padding: 40px 6%;
+  }
+
+  .question-card {
+    padding: 25px 20px;
+  }
+
+  .question-title {
+    font-size: 20px;
+  }
+
+  label {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 576px) {
+  .quiz-page {
+    padding: 25px 4%;
+  }
+
+  .question-card {
+    border-radius: 12px;
+  }
+
+  .question-title {
+    font-size: 18px;
+  }
+
+  input[type='radio'] {
+    transform: scale(1.1);
+  }
+}
